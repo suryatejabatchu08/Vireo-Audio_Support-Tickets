@@ -153,3 +153,55 @@
 - The overall monthly breach rate roughly triples from early‑2025 levels to mid‑2026 levels, consistent with the finance controller’s observation that the SLA credit line in the P&L has tripled since last summer.
 
 All calculations, assumptions, and intermediate steps are documented in the script `compute_breaches.py` and the cleaned file `tickets_cleaned.csv`. The original `tickets.csv` remains unchanged.
+
+
+### Weekly Breach Report Generation (Updated v3)
+- Updated script `weekly_breach_report_v3.py` to implement three requested changes:
+  1. **Shift table**: added columns `no_cover_breaches`, `staffed_late_breaches`, `total_breaches` (sum of the two), and a `partial_week` flag indicating the final week (week of 2026-06-29) which contains only one day of data and is marked as partial.
+  2. **Agent view**: removed noisy weekly agent rows from HTML; retained full detail in `weekly_agent_report_detailed.csv`. Added two summary tables:
+     - Whole‑period Tier 1 agent summary (`weekly_agent_report_summary.csv`) showing breach rate only for agents with ≥20 tickets.
+     - Last‑4‑weeks Tier 1 agent summary (`weekly_agent_report_last4weeks_summary.csv`) with the same ≥20‑ticket threshold.
+     Both summaries include `breach_rate_%`, `staffed_late_rate_%`, and the `mostly_inherited_flag`.
+     Tier 2 agents (Escalations & Warranty) are excluded from these summaries and instead listed in `tier2_not_comparable.csv` with a one‑line note explaining why they are not comparable.
+  3. **HTML report**: shortened to under ~100 KB. Contains:
+     - A note at the top: “Agent figures show who resolved the ticket, not who sent the first reply, because the helpdesk does not record that.”
+     - A summary of the last 8 weeks by shift with cause split and total breaches, plus a partial‑week indicator.
+     - A table of the top 10 Tier 1 agents by staffed‑late breach rate (staffed_late_breaches / tickets) for agents with at least 20 tickets, showing breach rate, staffed‑late rate, and mostly inherited flag.
+     - Links to the CSV files for full detail.
+- **Definition of “no cover”**: for a ticket's created date and shift (from `created_at` in IST), check whether at least one agent on the roster from the channel's frontline team (Chat Frontline for chat/social, Email Frontline for email, Voice Frontline for voice) is valid on that date and whose shift matches the ticket's shift. If yes → 'staffed but late'; if no → 'no cover'. (Voice has no overnight service by policy, but no voice breaches occur overnight, so nothing changes. A roster row's `to_date` is inclusive.)
+- Output files produced:
+    * `weekly_shift_report.csv` – weekly shift table with cause split, total breaches, and partial week flag.
+    * `weekly_agent_report_detailed.csv` – weekly agent‑level detail (all agents, all weeks).
+    * `weekly_agent_report_summary.csv` – agent summary over whole period (Tier 1, min 20 tickets for rates).
+    * `weekly_agent_report_last4weeks_summary.csv` – agent summary over last 4 weeks (Tier 1, min 20 tickets for rates).
+    * `tier2_not_comparable.csv` – list of Escalations & Warranty agents with explanatory note.
+    * `weekly_breach_report.html` – HTML report with summary tables and the note above.
+- Script run on 2026-10-01; files created successfully.
+- Tier 1 average staffed‑late breach rate (agents with ≥20 tickets): **7.48%**.
+- Top three agents by staffed‑late rate:
+    * A3003 (Harpreet Deshpande, Chat Frontline): 13.17% (27/205)
+    * A3016 (Deepak Jadhav, Email Frontline): 12.28% (7/57)
+    * A3001 (Zoya Mehta, Chat Frontline): 12.00% (6/50)
+- Breach cause totals by month (no‑cover vs staffed‑late) are shown below for verification.
+
+
+### Breach Cause Totals by Month (from tickets_cleaned.csv)
+Month	No-Cover	Staffed-Late
+2025-01	0	21
+2025-02	0	41
+2025-03	0	37
+2025-04	0	38
+2025-05	0	40
+2025-06	2	32
+2025-07	79	30
+2025-08	132	56
+2025-09	124	58
+2025-10	137	70
+2025-11	154	58
+2025-12	138	57
+2026-01	149	64
+2026-02	114	43
+2026-03	147	56
+2026-04	139	55
+2026-05	136	52
+2026-06	130	51
