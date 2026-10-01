@@ -205,3 +205,1060 @@ Month	No-Cover	Staffed-Late
 2026-04	139	55
 2026-05	136	52
 2026-06	130	51
+### Cost of Overnight Coverage Gap Analysis
+**Period**: 2025-06-30 to 2026-06-30
+**Assumptions**:
+1. Only tickets with status 'resolved' or 'closed' considered for breach and credit calculations.
+2. Breach defined as first_response_at - created_at > channel target (chat 15min, voice 2h, social 4h, email 8h).
+3. 'no cover' breach: no agent from the channel's frontline team (Chat Frontline for chat/social, Email Frontline for email, Voice Frontline for voice) rostered on the ticket's created date and matching shift.
+4. Roster row's to_date is inclusive; an agent is valid on a date if from_date <= date <= to_date (or to_date blank).
+5. Morning and Day breach rate used as unavoidable baseline for Night tickets.
+6. Credit issued per breach regardless of cause, amount Rs 350.
+7. Agent cost: Rs 165 per agent-hour, 8-hour shift => Rs 1320 per night shift per agent.
+8. Number of nights in period = 366 (one per day).
+9. Headcount is frozen; we can only reassign existing agents, not hire new.
+10. To achieve full night coverage, we assume we can assign any spare frontline agent to cover all missing nights (simplification).
+11. Average overnight ticket volume per hour computed as total night tickets divided by total night hours (8 hours per night).
+
+**Results**:
+- Night 'no cover' breaches (resolved/closed): 1503
+- Open or pending tickets excluded: 468
+- Credit cost per breach: Rs 350
+- Total credit cost (no cover breaches): Rs 526,050
+- Credit cost per year: Rs 526,050
+- Credit cost per quarter: Rs 131,512
+
+- Morning+Day tickets: 6581
+- Morning+Day breaches: 624
+- Baseline breach rate (Morning+Day): 9.48%
+- Expected Night breaches if same rate: 180.06
+- Actual Night breaches: 1503
+- Avoidable breaches (actual - expected): 1322.94 => 1323
+- Avoidable credit cost per year: Rs 463,029
+- Avoidable credit cost per quarter: Rs 115,757
+
+- Cost per agent per night shift: Rs 1,320
+- Cost per agent per day: Rs 1,320
+- Cost per agent per year: Rs 483,120
+- Cost per agent per quarter: Rs 120,780
+
+- Night agents (Chat Frontline, Email Frontline, Voice Frontline) before 2025-06-29: 5
+- Night agents (same teams) after 2026-06-30: 0
+
+- Total nights in period: 362
+- Nights with at least one frontline night agent rostered: 0
+- Coverage proportion: 0.00%
+
+- Average overnight ticket volume per hour: 0.649 tickets/hour
+(Total night tickets: 1899, total night hours: 2928)
+
+- Extra agents needed to achieve full night coverage: 1
+- Cost of extra agent(s) per quarter: Rs 120,780
+- Avoidable credit saving per quarter: Rs 115,757
+- Net saving per quarter: Rs -5,023
+
+- Impact on day/morning coverage if reassigning agents: One fewer frontline agent available for day/morning shifts (spare agents reduced from 26 to 25)
+
+- Total tickets (resolved/closed) in period: 8480
+- Total breaches (Night + Morning+Day): 2127
+- Overall breach rate before fixing gap: 25.08%
+- Overall breach rate after eliminating avoidable breaches: 9.48%
+- Reduction in overall breach rate: 15.60 percentage points
+
+### Headline Goal
+Cut the overall breach rate from 25.08% to 9.48%, worth about Rs 115,757 a quarter.
+
+### Cost of Overnight Coverage Gap Analysis
+**Period**: 2025-06-30 to 2026-06-30
+**Assumptions**:
+1. Only tickets with status 'resolved' or 'closed' considered for breach and credit calculations.
+2. Breach defined as first_response_at - created_at > channel target (chat 15min, voice 2h, social 4h, email 8h).
+3. 'no cover' breach: no agent from the channel's frontline team (Chat Frontline for chat/social, Email Frontline for email, Voice Frontline for voice) rostered on the ticket's created date and matching shift.
+4. Roster row's to_date is inclusive; an agent is valid on a date if from_date <= date <= to_date (or to_date blank).
+5. Morning and Day breach rate used as unavoidable baseline for Night tickets.
+6. Credit issued per breach regardless of cause, amount Rs 350.
+7. Agent cost: Rs 165 per agent-hour, 8-hour shift => Rs 1320 per night shift per agent.
+8. Number of nights in period = 366 (one per day).
+9. Headcount is frozen; we can only reassign existing agents, not hire new.
+10. To achieve full night coverage, we assume we can assign any spare frontline agent to cover all missing nights (simplification).
+11. Average overnight ticket volume per hour computed as total night tickets divided by total night hours (8 hours per night).
+
+**Results**:
+- Night 'no cover' breaches (resolved/closed): 1503
+- Open or pending tickets excluded: 468
+- Credit cost per breach: Rs 350
+- Total credit cost (no cover breaches): Rs 526,050
+- Credit cost per year: Rs 526,050
+- Credit cost per quarter: Rs 131,512
+
+- Morning+Day tickets: 6581
+- Morning+Day breaches: 624
+- Baseline breach rate (Morning+Day): 9.48%
+- Expected Night breaches if same rate: 180.06
+- Actual Night breaches: 1503
+- Avoidable breaches (actual - expected): 1322.94 => 1323
+- Avoidable credit cost per year: Rs 463,029
+- Avoidable credit cost per quarter: Rs 115,757
+
+- Cost per agent per night shift: Rs 1,320
+- Cost per agent per day: Rs 1,320
+- Cost per agent per year: Rs 483,120
+- Cost per agent per quarter: Rs 120,780
+
+- Night agents (Chat Frontline, Email Frontline, Voice Frontline) before 2025-06-29: 5
+- Night agents (same teams) after 2026-06-30: 0
+
+- Total nights in period: 362
+- Nights with at least one frontline night agent rostered: 0
+- Coverage proportion: 0.00%
+
+- Average overnight ticket volume per hour: 0.649 tickets/hour
+(Total night tickets: 1899, total night hours: 2928)
+
+- Extra agents needed to achieve full night coverage: 1
+- Cost of extra agent(s) per quarter: Rs 120,780
+- Avoidable credit saving per quarter: Rs 115,757
+- Net saving per quarter: Rs -5,023
+
+- Impact on day/morning coverage if reassigning agents: One fewer frontline agent available for day/morning shifts (spare agents reduced from 26 to 25)
+
+- Total tickets (resolved/closed) in period: 8480
+- Total breaches (Night + Morning+Day): 2127
+- Overall breach rate before fixing gap: 25.08%
+- Overall breach rate after eliminating avoidable breaches: 9.48%
+- Reduction in overall breach rate: 15.60 percentage points
+
+### Headline Goal
+Cut the overall breach rate from 25.08% to 9.48%, worth about Rs 115,757 a quarter.
+
+### Cost of Overnight Coverage Gap Analysis
+**Period**: 2025-06-30 to 2026-06-30
+**Assumptions**:
+1. Only tickets with status 'resolved' or 'closed' considered for breach and credit calculations.
+2. Breach defined as first_response_at - created_at > channel target (chat 15min, voice 2h, social 4h, email 8h).
+3. 'no cover' breach: no agent from the channel's frontline team (Chat Frontline for chat/social, Email Frontline for email, Voice Frontline for voice) rostered on the ticket's created date and matching shift.
+4. Roster row's to_date is inclusive; an agent is valid on a date if from_date <= date <= to_date (or to_date blank).
+5. Morning and Day breach rate used as unavoidable baseline for Night tickets.
+6. Credit issued per breach regardless of cause, amount Rs 350.
+7. Agent cost: Rs 165 per agent-hour, 8-hour shift => Rs 1320 per night shift per agent.
+8. Number of nights in period = 366 (one per day).
+9. Headcount is frozen; we can only reassign existing agents, not hire new.
+10. To achieve full night coverage, we assume we can assign any spare frontline agent to cover all missing nights (simplification).
+11. Average overnight ticket volume per hour computed as total night tickets divided by total night hours (8 hours per night).
+
+**Results**:
+- Night 'no cover' breaches (resolved/closed): 1503
+- Open or pending tickets excluded: 468
+- Credit cost per breach: Rs 350
+- Total credit cost (no cover breaches): Rs 526,050
+- Credit cost per year: Rs 526,050
+- Credit cost per quarter: Rs 131,512
+
+- Morning+Day tickets: 6581
+- Morning+Day breaches: 624
+- Baseline breach rate (Morning+Day): 9.48%
+- Expected Night breaches if same rate: 180.06
+- Actual Night breaches: 1503
+- Avoidable breaches (actual - expected): 1322.94 => 1323
+- Avoidable credit cost per year: Rs 463,029
+- Avoidable credit cost per quarter: Rs 115,757
+
+- Cost per agent per night shift: Rs 1,320
+- Cost per agent per day: Rs 1,320
+- Cost per agent per year: Rs 483,120
+- Cost per agent per quarter: Rs 120,780
+
+- Night agents (Chat Frontline, Email Frontline, Voice Frontline) before 2025-06-29: 5
+- Night agents (same teams) after 2026-06-30: 0
+
+- Total nights in period: 366
+- Nights with at least one frontline night agent rostered: 0
+- Coverage proportion: 0.00%
+
+- Average overnight ticket volume per hour: 0.649 tickets/hour
+(Total night tickets: 1899, total night hours: 2928)
+
+**Targeted Cover Options Analysis**:
+- Night 'no cover' breaches (resolved/closed) in period: 1503
+
+Option 1: Agent covers 22:00 to 02:00
+  Breaches avoided: 1306
+  Credit saved per year: Rs 457,100
+  Credit saved per quarter: Rs 114,275
+
+Option 2: Agent covers 22:00 to 04:00
+  Breaches avoided: 1403
+  Credit saved per year: Rs 491,050
+  Credit saved per quarter: Rs 122,762
+
+Option 3: Agent covers chat only for whole night (22:00-06:00)
+  Breaches avoided: 990
+  Credit saved per year: Rs 346,500
+  Credit saved per quarter: Rs 86,625
+
+Hourly share of overnight tickets (all night shift tickets):
+  00:00 - 00:59: 11.43% (217 tickets)
+  01:00 - 01:59: 8.85% (168 tickets)
+  02:00 - 02:59: 5.21% (99 tickets)
+  03:00 - 03:59: 4.58% (87 tickets)
+  04:00 - 04:59: 4.84% (92 tickets)
+  05:00 - 05:59: 5.69% (108 tickets)
+  06:00 - 06:59: 0.00% (0 tickets)
+  07:00 - 07:59: 0.00% (0 tickets)
+  08:00 - 08:59: 0.00% (0 tickets)
+  09:00 - 09:59: 0.00% (0 tickets)
+  10:00 - 10:59: 0.00% (0 tickets)
+  11:00 - 11:59: 0.00% (0 tickets)
+  12:00 - 12:59: 0.00% (0 tickets)
+  13:00 - 13:59: 0.00% (0 tickets)
+  14:00 - 14:59: 0.00% (0 tickets)
+  15:00 - 15:59: 0.00% (0 tickets)
+  16:00 - 16:59: 0.00% (0 tickets)
+  17:00 - 17:59: 0.00% (0 tickets)
+  18:00 - 18:59: 0.00% (0 tickets)
+  19:00 - 19:59: 0.00% (0 tickets)
+  20:00 - 20:59: 0.00% (0 tickets)
+  21:00 - 21:59: 0.00% (0 tickets)
+  22:00 - 22:59: 38.07% (723 tickets)
+  23:00 - 23:59: 21.33% (405 tickets)
+
+**Net Impact**:
+- If a new agent is hired for night shift:
+  Extra cost per quarter: Rs 120,780
+  Avoidable credit saving per quarter: Rs 115,757
+  Net saving per quarter: Rs -5,023
+
+- If an existing agent is reassigned from day/morning to night shift (no salary change):
+  Extra cost per quarter: Rs 0 (same agent)
+  Avoidable credit saving per quarter: Rs 115,757
+  Net saving per quarter: Rs 115,757 (but lose one agent from day/morning shifts)
+  Impact: One fewer frontline agent available for day/morning shifts.
+  (Assuming we have a spare agent to reassign; current spare frontline agents: 44)
+
+- Total tickets (resolved/closed) in period: 8480
+- Total breaches (Night + Morning+Day): 2127
+- Overall breach rate before fixing gap: 25.08%
+- Overall breach rate after eliminating avoidable breaches: 9.48%
+- Reduction in overall breach rate: 15.60 percentage points
+
+### Headline Goal
+Cut the overall breach rate from 25.08% to 9.48%, worth about Rs 115,757 a quarter.
+
+### Cost of Overnight Coverage Gap Analysis
+**Period**: 2025-06-30 to 2026-06-30
+**Assumptions**:
+1. Only tickets with status 'resolved' or 'closed' considered for breach and credit calculations.
+2. Breach defined as first_response_at - created_at > channel target (chat 15min, voice 2h, social 4h, email 8h).
+3. 'no cover' breach: no agent from the channel's frontline team (Chat Frontline for chat/social, Email Frontline for email, Voice Frontline for voice) rostered on the ticket's created date and matching shift.
+4. Roster row's to_date is inclusive; an agent is valid on a date if from_date <= date <= to_date (or to_date blank).
+5. Morning and Day breach rate used as unavoidable baseline for Night tickets.
+6. Credit issued per breach regardless of cause, amount Rs 350.
+7. Agent cost: Rs 165 per agent-hour, 8-hour shift => Rs 1320 per night shift per agent.
+8. Number of nights in period = 366 (one per day).
+9. Headcount is frozen; we can only reassign existing agents, not hire new.
+10. Average overnight ticket volume per hour computed as total night tickets divided by total night hours (8 hours per night).
+
+**Results**:
+- Night 'no cover' breaches (resolved/closed): 1503
+- Open or pending tickets excluded: 468
+- Credit cost per breach: Rs 350
+- Total credit cost (no cover breaches): Rs 526,050
+- Credit cost per year: Rs 526,050
+- Credit cost per quarter: Rs 131,512
+
+- Morning+Day tickets: 6581
+- Morning+Day breaches: 624
+- Baseline breach rate (Morning+Day): 9.48%
+- Expected Night breaches if same rate: 180.06
+- Actual Night breaches: 1503
+- Avoidable breaches (actual - expected): 1322.94 => 1323
+- Avoidable credit cost per year: Rs 463,029
+- Avoidable credit cost per quarter: Rs 115,757
+
+- Cost per agent per night shift: Rs 1,320
+- Cost per agent per day: Rs 1,320
+- Cost per agent per year: Rs 483,120
+- Cost per agent per quarter: Rs 120,780
+
+- Night agents (Chat Frontline, Email Frontline, Voice Frontline) before 2025-06-29: 5
+- Night agents (same teams) after 2026-06-30: 0
+
+- Total nights in period: 366
+- Nights with at least one frontline night agent rostered: 0
+- Coverage proportion: 0.00%
+
+- Average overnight ticket volume per hour: 0.649 tickets/hour
+(Total night tickets: 1899, total night hours: 2928)
+
+**Targeted Cover Options Analysis**:
+- Night 'no cover' breaches (resolved/closed) in period: 1503
+
+Option 1: Agent covers 22:00 to 02:00
+  Tickets in window: 1513
+  Actual breaches in window: 1306
+  Expected breaches in window: 143.46
+  Breaches avoided: 1162.54 => 1163
+  Credit saved per year: Rs 406,889
+  Credit saved per quarter: Rs 101,722
+
+Option 2: Agent covers 22:00 to 04:00
+  Tickets in window: 1699
+  Actual breaches in window: 1403
+  Expected breaches in window: 161.10
+  Breaches avoided: 1241.90 => 1242
+  Credit saved per year: Rs 434,666
+  Credit saved per quarter: Rs 108,667
+
+Option 3: Agent covers chat only for whole night (22:00-06:00)
+  Tickets in window: 991
+  Actual breaches in window: 990
+  Expected breaches in window: 93.97
+  Breaches avoided: 896.03 => 896
+  Credit saved per year: Rs 313,612
+  Credit saved per quarter: Rs 78,403
+
+Hourly share of overnight tickets (night hours only):
+  22:00 - 22:59: 38.07% (723 tickets)
+  23:00 - 23:59: 21.33% (405 tickets)
+  00:00 - 00:59: 11.43% (217 tickets)
+  01:00 - 01:59: 8.85% (168 tickets)
+  02:00 - 02:59: 5.21% (99 tickets)
+  03:00 - 03:59: 4.58% (87 tickets)
+  04:00 - 04:59: 4.84% (92 tickets)
+  05:00 - 05:59: 5.69% (108 tickets)
+
+**Net Impact**:
+- If a new agent is hired for night shift:
+  Extra cost per quarter: Rs 120,780
+  Avoidable credit saving per quarter (baseline-adjusted best option): Rs 108,667
+  Net saving per quarter: Rs -5,023
+
+- If an existing agent is reassigned from day/morning to night shift (no salary change):
+  Extra cost per quarter: Rs 0 (same agent)
+  Avoidable credit saving per quarter (baseline-adjusted best option): Rs 108,667
+  Net saving per quarter: Rs 108,667 (but lose one agent from day/morning shifts)
+  Impact: One fewer frontline agent available for day/morning shifts.
+
+- Total tickets (resolved/closed) in period: 8480
+- Total breaches (Night + Morning+Day): 2127
+- Overall breach rate before fixing gap: 25.08%
+- Overall breach rate after eliminating avoidable breaches (baseline): 9.48%
+- Overall breach rate after best option (22:00-04:00): 10.44%
+- Reduction in overall breach rate (baseline): 15.60 percentage points
+- Reduction in overall breach rate (best option): 10.44 percentage points
+
+### Headline Goal
+Cut the overall breach rate from about 25.1% to about 10.4%, worth roughly Rs 108,667 a quarter.
+
+### Cost of Overnight Coverage Gap Analysis
+**Period**: 2025-06-30 to 2026-06-30
+**Assumptions**:
+1. Only tickets with status 'resolved' or 'closed' considered for breach and credit calculations.
+2. Breach defined as first_response_at - created_at > channel target (chat 15min, voice 2h, social 4h, email 8h).
+3. 'no cover' breach: no agent from the channel's frontline team (Chat Frontline for chat/social, Email Frontline for email, Voice Frontline for voice) rostered on the ticket's created date and matching shift.
+4. Roster row's to_date is inclusive; an agent is valid on a date if from_date <= date <= to_date (or to_date blank).
+5. Morning and Day breach rate used as unavoidable baseline for Night tickets.
+6. Credit issued per breach regardless of cause, amount Rs 350.
+7. Agent cost: Rs 165 per agent-hour, 8-hour shift => Rs 1320 per night shift per agent.
+8. Number of nights in period = 366 (one per day).
+9. Headcount is frozen; we can only reassign existing agents, not hire new.
+10. Average overnight ticket volume per hour computed as total night tickets divided by total night hours (8 hours per night).
+
+**Results**:
+- Night 'no cover' breaches (resolved/closed): 1503
+- Open or pending tickets excluded: 468
+- Credit cost per breach: Rs 350
+- Total credit cost (no cover breaches): Rs 526,050
+- Credit cost per year: Rs 526,050
+- Credit cost per quarter: Rs 131,512
+
+- Morning+Day tickets: 6581
+- Morning+Day breaches: 624
+- Baseline breach rate (Morning+Day): 9.48%
+- Expected Night breaches if same rate: 180.06
+- Actual Night breaches: 1503
+- Avoidable breaches (actual - expected): 1322.94 => 1323
+- Avoidable credit cost per year: Rs 463,029
+- Avoidable credit cost per quarter: Rs 115,757
+
+- Cost per agent per night shift: Rs 1,320
+- Cost per agent per day: Rs 1,320
+- Cost per agent per year: Rs 483,120
+- Cost per agent per quarter: Rs 120,780
+
+- Night agents (Chat Frontline, Email Frontline, Voice Frontline) before 2025-06-29: 5
+- Night agents (same teams) after 2026-06-30: 0
+
+- Total nights in period: 366
+- Nights with at least one frontline night agent rostered: 0
+- Coverage proportion: 0.00%
+
+- Average overnight ticket volume per hour: 0.649 tickets/hour
+(Total night tickets: 1899, total night hours: 2928)
+
+**Targeted Cover Options Analysis**:
+- Night 'no cover' breaches (resolved/closed) in period: 1503
+
+Option 1: Agent covers 22:00 to 02:00
+  Tickets in window: 1513
+  Actual breaches in window: 1306
+  Expected breaches in window: 143.46
+  Breaches avoided: 1162.54 => 1163
+  Credit saved per year: Rs 406,889
+  Credit saved per quarter: Rs 101,722
+
+Option 2: Agent covers 22:00 to 04:00
+  Tickets in window: 1699
+  Actual breaches in window: 1403
+  Expected breaches in window: 161.10
+  Breaches avoided: 1241.90 => 1242
+  Credit saved per year: Rs 434,666
+  Credit saved per quarter: Rs 108,667
+
+Option 3: Agent covers chat only for whole night (22:00-06:00)
+  Tickets in window: 991
+  Actual breaches in window: 990
+  Expected breaches in window: 93.97
+  Breaches avoided: 896.03 => 896
+  Credit saved per year: Rs 313,612
+  Credit saved per quarter: Rs 78,403
+
+Option 4: Chat Frontline agent covering chat and social only, 22:00 to 04:00
+  Tickets in window: 1040
+  Actual breaches in window: 1035
+  Expected breaches in window: 98.61
+  Breaches avoided: 936.39 => 936
+  Credit saved per year: Rs 327,736
+  Credit saved per quarter: Rs 81,934
+
+Hourly share of overnight tickets (night hours only):
+  22:00 - 22:59: 38.07% (723 tickets)
+  23:00 - 23:59: 21.33% (405 tickets)
+  00:00 - 00:59: 11.43% (217 tickets)
+  01:00 - 01:59: 8.85% (168 tickets)
+  02:00 - 02:59: 5.21% (99 tickets)
+  03:00 - 03:59: 4.58% (87 tickets)
+  04:00 - 04:59: 4.84% (92 tickets)
+  05:00 - 05:59: 5.69% (108 tickets)
+
+**Net Impact**:
+- If a new agent is hired for night shift:
+  Option 1 (22:00-02:00, 4.0h):
+    Extra cost per quarter: Rs 60,390
+    Avoidable credit saving per quarter: Rs 101,722
+    Net saving per quarter: Rs 41,332
+
+  Option 2 (22:00-04:00, 6.0h):
+    Extra cost per quarter: Rs 90,585
+    Avoidable credit saving per quarter: Rs 108,667
+    Net saving per quarter: Rs 18,082
+
+  Option 3 (chat only 22:00-06:00, 8.0h):
+    Extra cost per quarter: Rs 120,780
+    Avoidable credit saving per quarter: Rs 78,403
+    Net saving per quarter: Rs -42,377
+
+  Option 4 (chat+social 22:00-04:00, 6.0h):
+    Extra cost per quarter: Rs 90,585
+    Avoidable credit saving per quarter: Rs 81,934
+    Net saving per quarter: Rs -8,651
+
+- If an existing agent is reassigned from day/morning to night shift (no salary change):
+  Extra cost per quarter: Rs 0 (same agent)
+  Avoidable credit saving per quarter (Option 1): Rs 101,722
+  Net saving per quarter: Rs 101,722 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 2): Rs 108,667
+  Net saving per quarter: Rs 108,667 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 3): Rs 78,403
+  Net saving per quarter: Rs 78,403 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 4): Rs 81,934
+  Net saving per quarter: Rs 81,934 (but lose one agent from day/morning shifts)
+  Impact: One fewer frontline agent available for day/morning shifts.
+
+- Total tickets (resolved/closed) in period: 8480
+- Total breaches (Night + Morning+Day): 2127
+- Overall breach rate before fixing gap: 25.08%
+- Overall breach rate after eliminating avoidable breaches (baseline): 9.48%
+- Overall breach rate after Option 1 (22:00-02:00): 11.37%
+- Overall breach rate after Option 2 (22:00-04:00): 10.44%
+- Overall breach rate after Option 3 (chat only 22:00-06:00): 14.52%
+- Overall breach rate after Option 4 (chat+social 22:00-04:00): 14.04%
+- Reduction in overall breach rate (baseline): 15.60 percentage points
+- Reduction in overall breach rate (Option 1): 13.71 percentage points
+- Reduction in overall breach rate (Option 2): 14.65 percentage points
+- Reduction in overall breach rate (Option 3): 10.57 percentage points
+- Reduction in overall breach rate (Option 4): 11.04 percentage points
+
+### Headline Goal
+Cut the overall breach rate from about 25.1% to about 10.4%, worth roughly Rs 108,667 a quarter.
+
+### Cost of Overnight Coverage Gap Analysis
+**Period**: 2025-06-30 to 2026-06-30
+**Assumptions**:
+1. Only tickets with status 'resolved' or 'closed' considered for breach and credit calculations.
+2. Breach defined as first_response_at - created_at > channel target (chat 15min, voice 2h, social 4h, email 8h).
+3. 'no cover' breach: no agent from the channel's frontline team (Chat Frontline for chat/social, Email Frontline for email, Voice Frontline for voice) rostered on the ticket's created date and matching shift.
+4. Roster row's to_date is inclusive; an agent is valid on a date if from_date <= date <= to_date (or to_date blank).
+5. Morning and Day breach rate used as unavoidable baseline for Night tickets.
+6. Credit issued per breach regardless of cause, amount Rs 350.
+7. Agent cost: Rs 165 per agent-hour, 8-hour shift => Rs 1320 per night shift per agent.
+8. Number of nights in period = 366 (one per day).
+9. Headcount is frozen; we can only reassign existing agents, not hire new.
+10. Average overnight ticket volume per hour computed as total night tickets divided by total night hours (8 hours per night).
+
+**Results**:
+- Night 'no cover' breaches (resolved/closed): 1503
+- Open or pending tickets excluded: 468
+- Credit cost per breach: Rs 350
+- Total credit cost (no cover breaches): Rs 526,050
+- Credit cost per year: Rs 526,050
+- Credit cost per quarter: Rs 131,512
+
+- Morning+Day tickets: 6581
+- Morning+Day breaches: 624
+- Baseline breach rate (Morning+Day): 9.48%
+- Expected Night breaches if same rate: 180.06
+- Actual Night breaches: 1503
+- Avoidable breaches (actual - expected): 1322.94 => 1323
+- Avoidable credit cost per year: Rs 463,029
+- Avoidable credit cost per quarter: Rs 115,757
+
+- Cost per agent per night shift: Rs 1,320
+- Cost per agent per day: Rs 1,320
+- Cost per agent per year: Rs 483,120
+- Cost per agent per quarter: Rs 120,780
+
+- Night agents (Chat Frontline, Email Frontline, Voice Frontline) before 2025-06-29: 5
+- Night agents (same teams) after 2026-06-30: 0
+
+- Total nights in period: 366
+- Nights with at least one frontline night agent rostered: 0
+- Coverage proportion: 0.00%
+
+- Average overnight ticket volume per hour: 0.649 tickets/hour
+(Total night tickets: 1899, total night hours: 2928)
+
+**Targeted Cover Options Analysis**:
+- Night 'no cover' breaches (resolved/closed) in period: 1503
+
+Option 1: Agent covers 22:00 to 02:00
+  Tickets in window: 1513
+  Actual breaches in window: 1306
+  Expected breaches in window: 143.46
+  Breaches avoided: 1162.54 => 1163
+  Credit saved per year: Rs 406,889
+  Credit saved per quarter: Rs 101,722
+
+Option 2: Agent covers 22:00 to 04:00
+  Tickets in window: 1699
+  Actual breaches in window: 1403
+  Expected breaches in window: 161.10
+  Breaches avoided: 1241.90 => 1242
+  Credit saved per year: Rs 434,666
+  Credit saved per quarter: Rs 108,667
+
+Option 3: Agent covers chat only for whole night (22:00-06:00)
+  Tickets in window: 991
+  Actual breaches in window: 990
+  Expected breaches in window: 93.97
+  Breaches avoided: 896.03 => 896
+  Credit saved per year: Rs 313,612
+  Credit saved per quarter: Rs 78,403
+
+Option 4: Chat Frontline agent covering chat and social only, 22:00 to 04:00
+  Tickets in window: 1040
+  Actual breaches in window: 1035
+  Expected breaches in window: 98.61
+  Breaches avoided: 936.39 => 936
+  Credit saved per year: Rs 327,736
+  Credit saved per quarter: Rs 81,934
+
+Hourly share of overnight tickets (night hours only):
+  22:00 - 22:59: 38.07% (723 tickets)
+  23:00 - 23:59: 21.33% (405 tickets)
+  00:00 - 00:59: 11.43% (217 tickets)
+  01:00 - 01:59: 8.85% (168 tickets)
+  02:00 - 02:59: 5.21% (99 tickets)
+  03:00 - 03:59: 4.58% (87 tickets)
+  04:00 - 04:59: 4.84% (92 tickets)
+  05:00 - 05:59: 5.69% (108 tickets)
+
+**Net Impact**:
+- If a new agent is hired for night shift:
+  Option 1 (22:00-02:00, 4.0h):
+    Extra cost per quarter: Rs 60,390
+    Avoidable credit saving per quarter: Rs 101,722
+    Net saving per quarter: Rs 41,332
+
+  Option 2 (22:00-04:00, 6.0h):
+    Extra cost per quarter: Rs 90,585
+    Avoidable credit saving per quarter: Rs 108,667
+    Net saving per quarter: Rs 18,082
+
+  Option 3 (chat only 22:00-06:00, 8.0h):
+    Extra cost per quarter: Rs 120,780
+    Avoidable credit saving per quarter: Rs 78,403
+    Net saving per quarter: Rs -42,377
+
+  Option 4 (chat+social 22:00-04:00, 6.0h):
+    Extra cost per quarter: Rs 90,585
+    Avoidable credit saving per quarter: Rs 81,934
+    Net saving per quarter: Rs -8,651
+
+- If an existing agent is reassigned from day/morning to night shift (no salary change):
+  Extra cost per quarter: Rs 0 (same agent)
+  Avoidable credit saving per quarter (Option 1): Rs 101,722
+  Net saving per quarter: Rs 101,722 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 2): Rs 108,667
+  Net saving per quarter: Rs 108,667 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 3): Rs 78,403
+  Net saving per quarter: Rs 78,403 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 4): Rs 81,934
+  Net saving per quarter: Rs 81,934 (but lose one agent from day/morning shifts)
+  Impact: One fewer frontline agent available for day/morning shifts.
+
+- Total tickets (resolved/closed) in period: 8480
+- Total breaches (Night + Morning+Day): 2127
+- Overall breach rate before fixing gap: 25.08%
+- Overall breach rate after eliminating avoidable breaches (baseline): 9.48%
+- Overall breach rate after Option 1 (22:00-02:00): 11.37%
+- Overall breach rate after Option 2 (22:00-04:00): 10.44%
+- Overall breach rate after Option 3 (chat only 22:00-06:00): 14.52%
+- Overall breach rate after Option 4 (chat+social 22:00-04:00): 14.04%
+- Reduction in overall breach rate (baseline): 15.60 percentage points
+- Reduction in overall breach rate (Option 1): 13.71 percentage points
+- Reduction in overall breach rate (Option 2): 14.65 percentage points
+- Reduction in overall breach rate (Option 3): 10.57 percentage points
+- Reduction in overall breach rate (Option 4): 11.04 percentage points
+
+### Headline Goal
+Cut the overall breach rate from about 25.1% to about 10.4%, worth roughly Rs 108,667 a quarter.
+
+### Cost of Overnight Coverage Gap Analysis
+**Period**: 2025-06-30 to 2026-06-30
+**Assumptions**:
+1. Only tickets with status 'resolved' or 'closed' considered for breach and credit calculations.
+2. Breach defined as first_response_at - created_at > channel target (chat 15min, voice 2h, social 4h, email 8h).
+3. 'no cover' breach: no agent from the channel's frontline team (Chat Frontline for chat/social, Email Frontline for email, Voice Frontline for voice) rostered on the ticket's created date and matching shift.
+4. Roster row's to_date is inclusive; an agent is valid on a date if from_date <= date <= to_date (or to_date blank).
+5. Morning and Day breach rate used as unavoidable baseline for Night tickets.
+6. Credit issued per breach regardless of cause, amount Rs 350.
+7. Agent cost: Rs 165 per agent-hour, 8-hour shift => Rs 1320 per night shift per agent.
+8. Number of nights in period = 366 (one per day).
+9. Headcount is frozen; we can only reassign existing agents, not hire new.
+10. Average overnight ticket volume per hour computed as total night tickets divided by total night hours (8 hours per night).
+
+**Results**:
+- Night 'no cover' breaches (resolved/closed): 1503
+- Open or pending tickets excluded: 468
+- Credit cost per breach: Rs 350
+- Total credit cost (no cover breaches): Rs 526,050
+- Credit cost per year: Rs 526,050
+- Credit cost per quarter: Rs 131,512
+
+- Morning+Day tickets: 6581
+- Morning+Day breaches: 624
+- Baseline breach rate (Morning+Day): 9.48%
+- Expected Night breaches if same rate: 180.06
+- Actual Night breaches: 1503
+- Avoidable breaches (actual - expected): 1322.94 => 1323
+- Avoidable credit cost per year: Rs 463,029
+- Avoidable credit cost per quarter: Rs 115,757
+
+- Cost per agent per night shift: Rs 1,320
+- Cost per agent per day: Rs 1,320
+- Cost per agent per year: Rs 483,120
+- Cost per agent per quarter: Rs 120,780
+
+- Night agents (Chat Frontline, Email Frontline, Voice Frontline) before 2025-06-29: 5
+- Night agents (same teams) after 2026-06-30: 0
+
+- Total nights in period: 366
+- Nights with at least one frontline night agent rostered: 0
+- Coverage proportion: 0.00%
+
+- Average overnight ticket volume per hour: 0.649 tickets/hour
+(Total night tickets: 1899, total night hours: 2928)
+
+**Targeted Cover Options Analysis**:
+- Night 'no cover' breaches (resolved/closed) in period: 1503
+
+Option 1: Agent covers 22:00 to 02:00
+  Tickets in window: 1513
+  Actual breaches in window: 1306
+  Expected breaches in window: 143.46
+  Breaches avoided: 1162.54 => 1163
+  Credit saved per year: Rs 406,889
+  Credit saved per quarter: Rs 101,722
+
+Option 2: Agent covers 22:00 to 04:00
+  Tickets in window: 1699
+  Actual breaches in window: 1403
+  Expected breaches in window: 161.10
+  Breaches avoided: 1241.90 => 1242
+  Credit saved per year: Rs 434,666
+  Credit saved per quarter: Rs 108,667
+
+Option 3: Agent covers chat only for whole night (22:00-06:00)
+  Tickets in window: 991
+  Actual breaches in window: 990
+  Expected breaches in window: 93.97
+  Breaches avoided: 896.03 => 896
+  Credit saved per year: Rs 313,612
+  Credit saved per quarter: Rs 78,403
+
+Option 4: Chat Frontline agent covering chat and social only, 22:00 to 04:00
+  Tickets in window: 1040
+  Actual breaches in window: 1035
+  Expected breaches in window: 98.61
+  Breaches avoided: 936.39 => 936
+  Credit saved per year: Rs 327,736
+  Credit saved per quarter: Rs 81,934
+
+Hourly share of overnight tickets (night hours only):
+  22:00 - 22:59: 38.07% (723 tickets)
+  23:00 - 23:59: 21.33% (405 tickets)
+  00:00 - 00:59: 11.43% (217 tickets)
+  01:00 - 01:59: 8.85% (168 tickets)
+  02:00 - 02:59: 5.21% (99 tickets)
+  03:00 - 03:59: 4.58% (87 tickets)
+  04:00 - 04:59: 4.84% (92 tickets)
+  05:00 - 05:59: 5.69% (108 tickets)
+
+**Net Impact**:
+- If a new agent is hired for night shift:
+  Option 1 (22:00-02:00, 4.0h):
+    Extra cost per quarter: Rs 60,390
+    Avoidable credit saving per quarter: Rs 101,722
+    Net saving per quarter: Rs 41,332
+
+  Option 2 (22:00-04:00, 6.0h):
+    Extra cost per quarter: Rs 90,585
+    Avoidable credit saving per quarter: Rs 108,667
+    Net saving per quarter: Rs 18,082
+
+  Option 3 (chat only 22:00-06:00, 8.0h):
+    Extra cost per quarter: Rs 120,780
+    Avoidable credit saving per quarter: Rs 78,403
+    Net saving per quarter: Rs -42,377
+
+  Option 4 (chat+social 22:00-04:00, 6.0h):
+    Extra cost per quarter: Rs 90,585
+    Avoidable credit saving per quarter: Rs 81,934
+    Net saving per quarter: Rs -8,651
+
+- If an existing agent is reassigned from day/morning to night shift (no salary change):
+  Extra cost per quarter: Rs 0 (same agent)
+  Avoidable credit saving per quarter (Option 1): Rs 101,722
+  Net saving per quarter: Rs 101,722 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 2): Rs 108,667
+  Net saving per quarter: Rs 108,667 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 3): Rs 78,403
+  Net saving per quarter: Rs 78,403 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 4): Rs 81,934
+  Net saving per quarter: Rs 81,934 (but lose one agent from day/morning shifts)
+  Impact: One fewer frontline agent available for day/morning shifts.
+
+- Total tickets (resolved/closed) in period: 8480
+- Total breaches (Night + Morning+Day): 2127
+- Overall breach rate before fixing gap: 25.08%
+- Overall breach rate after eliminating avoidable breaches (baseline): 9.48%
+- Overall breach rate after Option 1 (22:00-02:00): 11.37%
+- Overall breach rate after Option 2 (22:00-04:00): 10.44%
+- Overall breach rate after Option 3 (chat only 22:00-06:00): 14.52%
+- Overall breach rate after Option 4 (chat+social 22:00-04:00): 14.04%
+- Reduction in overall breach rate (baseline): 15.60 percentage points
+- Reduction in overall breach rate (Option 1): 13.71 percentage points
+- Reduction in overall breach rate (Option 2): 14.65 percentage points
+- Reduction in overall breach rate (Option 3): 10.57 percentage points
+- Reduction in overall breach rate (Option 4): 11.04 percentage points
+
+### Headline Goal
+Cut the overall breach rate from about 25.1% to about 10.4%, worth roughly Rs 108,667 a quarter.
+
+### Cost of Overnight Coverage Gap Analysis
+**Period**: 2025-06-30 to 2026-06-30
+**Assumptions**:
+1. Only tickets with status 'resolved' or 'closed' considered for breach and credit calculations.
+2. Breach defined as first_response_at - created_at > channel target (chat 15min, voice 2h, social 4h, email 8h).
+3. 'no cover' breach: no agent from the channel's frontline team (Chat Frontline for chat/social, Email Frontline for email, Voice Frontline for voice) rostered on the ticket's created date and matching shift.
+4. Roster row's to_date is inclusive; an agent is valid on a date if from_date <= date <= to_date (or to_date blank).
+5. Morning and Day breach rate used as unavoidable baseline for Night tickets.
+6. Credit issued per breach regardless of cause, amount Rs 350.
+7. Agent cost: Rs 165 per agent-hour, 8-hour shift => Rs 1320 per night shift per agent.
+8. Number of nights in period = 366 (one per day).
+9. Headcount is frozen; we can only reassign existing agents, not hire new.
+10. Average overnight ticket volume per hour computed as total night tickets divided by total night hours (8 hours per night).
+
+**Results**:
+- Night 'no cover' breaches (resolved/closed): 1503
+- Open or pending tickets excluded: 468
+- Credit cost per breach: Rs 350
+- Total credit cost (no cover breaches): Rs 526,050
+- Credit cost per year: Rs 526,050
+- Credit cost per quarter: Rs 131,512
+
+- Morning+Day tickets: 6581
+- Morning+Day breaches: 624
+- Baseline breach rate (Morning+Day): 9.48%
+- Expected Night breaches if same rate: 180.06
+- Actual Night breaches: 1503
+- Avoidable breaches (actual - expected): 1322.94 => 1323
+- Avoidable credit cost per year: Rs 463,029
+- Avoidable credit cost per quarter: Rs 115,757
+
+- Cost per agent per night shift: Rs 1,320
+- Cost per agent per day: Rs 1,320
+- Cost per agent per year: Rs 483,120
+- Cost per agent per quarter: Rs 120,780
+
+- Night agents (Chat Frontline, Email Frontline, Voice Frontline) before 2025-06-29: 5
+- Night agents (same teams) after 2026-06-30: 0
+
+- Total nights in period: 366
+- Nights with at least one frontline night agent rostered: 0
+- Coverage proportion: 0.00%
+
+- Average overnight ticket volume per hour: 0.649 tickets/hour
+(Total night tickets: 1899, total night hours: 2928)
+
+**Targeted Cover Options Analysis**:
+- Night 'no cover' breaches (resolved/closed) in period: 1503
+
+Option 1: Agent covers 22:00 to 02:00
+  Tickets in window: 1513
+  Actual breaches in window: 1306
+  Expected breaches in window: 143.46
+  Breaches avoided: 1162.54 => 1163
+  Credit saved per year: Rs 406,889
+  Credit saved per quarter: Rs 101,722
+
+Option 2: Agent covers 22:00 to 04:00
+  Tickets in window: 1699
+  Actual breaches in window: 1403
+  Expected breaches in window: 161.10
+  Breaches avoided: 1241.90 => 1242
+  Credit saved per year: Rs 434,666
+  Credit saved per quarter: Rs 108,667
+
+Option 3: Agent covers chat only for whole night (22:00-06:00)
+  Tickets in window: 991
+  Actual breaches in window: 990
+  Expected breaches in window: 93.97
+  Breaches avoided: 896.03 => 896
+  Credit saved per year: Rs 313,612
+  Credit saved per quarter: Rs 78,403
+
+Option 4: Chat Frontline agent covering chat and social only, 22:00 to 04:00
+  Tickets in window: 1040
+  Actual breaches in window: 1035
+  Expected breaches in window: 98.61
+  Breaches avoided: 936.39 => 936
+  Credit saved per year: Rs 327,736
+  Credit saved per quarter: Rs 81,934
+
+Hourly share of overnight tickets (night hours only):
+  22:00 - 22:59: 38.07% (723 tickets)
+  23:00 - 23:59: 21.33% (405 tickets)
+  00:00 - 00:59: 11.43% (217 tickets)
+  01:00 - 01:59: 8.85% (168 tickets)
+  02:00 - 02:59: 5.21% (99 tickets)
+  03:00 - 03:59: 4.58% (87 tickets)
+  04:00 - 04:59: 4.84% (92 tickets)
+  05:00 - 05:59: 5.69% (108 tickets)
+
+**Net Impact**:
+- If a new agent is hired for night shift:
+  Option 1 (22:00-02:00, 4.0h):
+    Extra cost per quarter: Rs 60,390
+    Avoidable credit saving per quarter: Rs 101,722
+    Net saving per quarter: Rs 41,332
+
+  Option 2 (22:00-04:00, 6.0h):
+    Extra cost per quarter: Rs 90,585
+    Avoidable credit saving per quarter: Rs 108,667
+    Net saving per quarter: Rs 18,082
+
+  Option 3 (chat only 22:00-06:00, 8.0h):
+    Extra cost per quarter: Rs 120,780
+    Avoidable credit saving per quarter: Rs 78,403
+    Net saving per quarter: Rs -42,377
+
+  Option 4 (chat+social 22:00-04:00, 6.0h):
+    Extra cost per quarter: Rs 90,585
+    Avoidable credit saving per quarter: Rs 81,934
+    Net saving per quarter: Rs -8,651
+
+- If an existing agent is reassigned from day/morning to night shift (no salary change):
+  Extra cost per quarter: Rs 0 (same agent)
+  Avoidable credit saving per quarter (Option 1): Rs 101,722
+  Net saving per quarter: Rs 101,722 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 2): Rs 108,667
+  Net saving per quarter: Rs 108,667 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 3): Rs 78,403
+  Net saving per quarter: Rs 78,403 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 4): Rs 81,934
+  Net saving per quarter: Rs 81,934 (but lose one agent from day/morning shifts)
+  Impact: One fewer frontline agent available for day/morning shifts.
+
+- Total tickets (resolved/closed) in period: 8480
+- Total breaches (Night + Morning+Day): 2127
+- Overall breach rate before fixing gap: 25.08%
+- Overall breach rate after eliminating avoidable breaches (baseline): 9.48%
+- Overall breach rate after Option 1 (22:00-02:00): 11.37%
+- Overall breach rate after Option 2 (22:00-04:00): 10.44%
+- Overall breach rate after Option 3 (chat only 22:00-06:00): 14.52%
+- Overall breach rate after Option 4 (chat+social 22:00-04:00): 14.04%
+- Reduction in overall breach rate (baseline): 15.60 percentage points
+- Reduction in overall breach rate (Option 1): 13.71 percentage points
+- Reduction in overall breach rate (Option 2): 14.65 percentage points
+- Reduction in overall breach rate (Option 3): 10.57 percentage points
+- Reduction in overall breach rate (Option 4): 11.04 percentage points
+
+### Headline Goal
+Cut the overall breach rate from about 25.1% to about 10.4%, worth roughly Rs 108,667 a quarter.
+
+### Cost of Overnight Coverage Gap Analysis
+**Period**: 2025-06-30 to 2026-06-30
+**Assumptions**:
+1. Only tickets with status 'resolved' or 'closed' considered for breach and credit calculations.
+2. Breach defined as first_response_at - created_at > channel target (chat 15min, voice 2h, social 4h, email 8h).
+3. 'no cover' breach: no agent from the channel's frontline team (Chat Frontline for chat/social, Email Frontline for email, Voice Frontline for voice) rostered on the ticket's created date and matching shift.
+4. Roster row's to_date is inclusive; an agent is valid on a date if from_date <= date <= to_date (or to_date blank).
+5. Morning and Day breach rate used as unavoidable baseline for Night tickets.
+6. Credit issued per breach regardless of cause, amount Rs 350.
+7. Agent cost: Rs 165 per agent-hour, 8-hour shift => Rs 1320 per night shift per agent.
+8. Number of nights in period = 366 (one per day).
+9. Headcount is frozen; we can only reassign existing agents, not hire new.
+10. Average overnight ticket volume per hour computed as total night tickets divided by total night hours (8 hours per night).
+
+**Results**:
+- Night 'no cover' breaches (resolved/closed): 1503
+- Open or pending tickets excluded: 468
+- Credit cost per breach: Rs 350
+- Total credit cost (no cover breaches): Rs 526,050
+- Credit cost per year: Rs 526,050
+- Credit cost per quarter: Rs 131,512
+
+- Morning+Day tickets: 6581
+- Morning+Day breaches: 624
+- Baseline breach rate (Morning+Day): 9.48%
+- Expected Night breaches if same rate: 180.06
+- Actual Night breaches: 1503
+- Avoidable breaches (actual - expected): 1322.94 => 1323
+- Avoidable credit cost per year: Rs 463,029
+- Avoidable credit cost per quarter: Rs 115,757
+
+- Cost per agent per night shift: Rs 1,320
+- Cost per agent per day: Rs 1,320
+- Cost per agent per year: Rs 483,120
+- Cost per agent per quarter: Rs 120,780
+
+- Night agents (Chat Frontline, Email Frontline, Voice Frontline) before 2025-06-29: 5
+- Night agents (same teams) after 2026-06-30: 0
+
+- Total nights in period: 366
+- Nights with at least one frontline night agent rostered: 0
+- Coverage proportion: 0.00%
+
+- Average overnight ticket volume per hour: 0.649 tickets/hour
+(Total night tickets: 1899, total night hours: 2928)
+
+**Targeted Cover Options Analysis**:
+- Night 'no cover' breaches (resolved/closed) in period: 1503
+
+Option 1: Agent covers 22:00 to 02:00
+  Tickets in window: 1513
+  Actual breaches in window: 1306
+  Expected breaches in window: 143.46
+  Breaches avoided: 1162.54 => 1163
+  Credit saved per year: Rs 406,889
+  Credit saved per quarter: Rs 101,722
+
+Option 2: Agent covers 22:00 to 04:00
+  Tickets in window: 1699
+  Actual breaches in window: 1403
+  Expected breaches in window: 161.10
+  Breaches avoided: 1241.90 => 1242
+  Credit saved per year: Rs 434,666
+  Credit saved per quarter: Rs 108,667
+
+Option 3: Agent covers chat only for whole night (22:00-06:00)
+  Tickets in window: 991
+  Actual breaches in window: 990
+  Expected breaches in window: 93.97
+  Breaches avoided: 896.03 => 896
+  Credit saved per year: Rs 313,612
+  Credit saved per quarter: Rs 78,403
+
+Option 4: Chat Frontline agent covering chat and social only, 22:00 to 04:00
+  Tickets in window: 1040
+  Actual breaches in window: 1035
+  Expected breaches in window: 98.61
+  Breaches avoided: 936.39 => 936
+  Credit saved per year: Rs 327,736
+  Credit saved per quarter: Rs 81,934
+
+Hourly share of overnight tickets (night hours only):
+  22:00 - 22:59: 38.07% (723 tickets)
+  23:00 - 23:59: 21.33% (405 tickets)
+  00:00 - 00:59: 11.43% (217 tickets)
+  01:00 - 01:59: 8.85% (168 tickets)
+  02:00 - 02:59: 5.21% (99 tickets)
+  03:00 - 03:59: 4.58% (87 tickets)
+  04:00 - 04:59: 4.84% (92 tickets)
+  05:00 - 05:59: 5.69% (108 tickets)
+
+**Net Impact**:
+- If a new agent is hired for night shift:
+  Option 1 (22:00-02:00, 4.0h):
+    Extra cost per quarter: Rs 60,390
+    Avoidable credit saving per quarter: Rs 101,722
+    Net saving per quarter: Rs 41,332
+
+  Option 2 (22:00-04:00, 6.0h):
+    Extra cost per quarter: Rs 90,585
+    Avoidable credit saving per quarter: Rs 108,667
+    Net saving per quarter: Rs 18,082
+
+  Option 3 (chat only 22:00-06:00, 8.0h):
+    Extra cost per quarter: Rs 120,780
+    Avoidable credit saving per quarter: Rs 78,403
+    Net saving per quarter: Rs -42,377
+
+  Option 4 (chat+social 22:00-04:00, 6.0h):
+    Extra cost per quarter: Rs 90,585
+    Avoidable credit saving per quarter: Rs 81,934
+    Net saving per quarter: Rs -8,651
+
+- If an existing agent is reassigned from day/morning to night shift (no salary change):
+  Extra cost per quarter: Rs 0 (same agent)
+  Avoidable credit saving per quarter (Option 1): Rs 101,722
+  Net saving per quarter: Rs 101,722 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 2): Rs 108,667
+  Net saving per quarter: Rs 108,667 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 3): Rs 78,403
+  Net saving per quarter: Rs 78,403 (but lose one agent from day/morning shifts)
+  Avoidable credit saving per quarter (Option 4): Rs 81,934
+  Net saving per quarter: Rs 81,934 (but lose one agent from day/morning shifts)
+  Impact: One fewer frontline agent available for day/morning shifts.
+
+- Total tickets (resolved/closed) in period: 8480
+- Total breaches (Night + Morning+Day): 2127
+- Overall breach rate before fixing gap: 25.08%
+- Overall breach rate after eliminating avoidable breaches (baseline): 9.48%
+- Overall breach rate after Option 1 (22:00-02:00): 11.37%
+- Overall breach rate after Option 2 (22:00-04:00): 10.44%
+- Overall breach rate after Option 3 (chat only 22:00-06:00): 14.52%
+- Overall breach rate after Option 4 (chat+social 22:00-04:00): 14.04%
+- Reduction in overall breach rate (baseline): 15.60 percentage points
+- Reduction in overall breach rate (Option 1): 13.71 percentage points
+- Reduction in overall breach rate (Option 2): 14.65 percentage points
+- Reduction in overall breach rate (Option 3): 10.57 percentage points
+- Reduction in overall breach rate (Option 4): 11.04 percentage points
+
+**Note**: Ticket volume doubled from July 2025 across all channels, driven by product VA-EB-PL2. This was not investigated further.
+
+### Headline Goal
+Cut the overall breach rate from about 25% to about 11%, worth roughly Rs 101,722 a quarter.
+
