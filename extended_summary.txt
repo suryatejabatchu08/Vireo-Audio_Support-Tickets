@@ -1,0 +1,32 @@
+14-Bullet Summary: SLA Targets, Cost Figures, Shift Definitions, Data Traps, and Additional Insights
+
+**SLA Targets:**
+1. First response SLA targets: Chat 15 minutes, Voice callback 2 hours, Social 4 hours, Email 8 hours (measured from ticket creation to first human agent reply)
+2. SLA breach penalty: Automatic Rs 350 store credit issued to customer's account on resolution for any ticket missing its first-response target, charged to the SLA credit line in support P&L
+3. Breach reporting: Breaches are reported against the resolving agent in helpdesk's standard reports, which could be misleading as it doesn't identify who caused the delay (e.g., if transfers occurred, the reporting agent may not be the one who missed the initial response target)
+
+**Cost Figures:**
+4. Fully loaded cost per contact: Chat Rs 210, Email Rs 260, Voice callback Rs 520, Social Rs 240; blended average across channel mix: Rs 290 per contact
+5. Internal transfer cost: Rs 305 per transfer (covers re-handling and administration when tickets move between teams)
+6. Agent labor cost: Fully loaded agent cost of Rs 165 per agent-hour for staffing decisions, with standard shift length of 8 hours
+
+**Shift Definitions:**
+7. Shift timings (IST): Morning shift 06:00-14:00, Day shift 14:00-22:00, Night shift 22:00-06:00
+8. Roster structure: One row per assignment with from/to dates; agents receive new roster row when changing site/shift but retain same agent_id
+9. Queue coverage: Outside staffed hours, coverage is picked up by the next shift in order of creation
+10. Tier 2 comparison rule: Tier 2 agents are not to be compared with Tier 1 on volume metrics, as Tier 2 cases are multi-touch and measured on resolution in days rather than tickets closed per week
+
+**Data Traps:**
+11. Timezone inconsistency: Helpdesk API exports timestamps in UTC, while standard reports and shift definitions use Indian Standard Time (IST)
+12. Multiple data quality issues: Legacy ticket duplication from re-import, legacy monetary units vs current rupees, reconstructed resolution timestamps for migrated tickets, CSAT scoring inconsistency (legacy 0 vs blank for no response), and ~40 failed IVR transcripts
+
+**Email Thread Insights:**
+13. Message summaries and implications:
+    - Neha Kulkarni (Support Ops): Requests weekly SLA breach reports by agent and shift to inform conversations with stakeholders
+    - Sameer Qureshi (Helpdesk Admin): Confirms export is in UTC (vs IST shift definitions), notes data quality issues: duplicate tickets from migration, legacy CSAT=0, ~40 failed IVR transcripts
+    - Arjun Mehta (Finance): Headcount frozen till Q4 (no hiring possible), notes SLA credit line in P&L tripled since last summer unexplained
+    - Priya Raman (Head of CX): Morning chat team demoralized by "wall of red" breach reports; observes CSAT (not credits) is the metric that actually moved
+    - Neha Kulkarni (follow-up): Confirms morning team has bulk of breaches, notes Indore June reshuffle was cost-neutral per Arjun, reiterates need for weekly agent/shift breach reports
+
+**Inconsistencies Noted:**
+14. Policy-thread inconsistency: While policy states Tier 2 cases should not be compared with Tier 1 on volume metrics, the email thread shows a request for breach reporting "by agent and shift" without distinguishing tiers, potentially forcing inappropriate comparisons. Additionally, Arjun notes SLA credits tripled while Neha claims the June Indore reshuffle was "cost-neutral," suggesting either unexplained cost increases or incomplete cost accounting.
