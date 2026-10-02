@@ -45,7 +45,6 @@ This runs, in order: data cleaning, breach calculation, the weekly reports, and 
 
 ## What you get in `output/`
 
-**TODO: adjust the file names to match your actual outputs.**
 
 | File | What it is |
 |---|---|
