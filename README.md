@@ -38,7 +38,7 @@ Full assumptions and sensitivity checks are in `VALIDATION.md` and `LOG.md`.
 ## Run
 
 ```
-python clean_tickets.py
+python clean_tickets.py compute_breaches.py weekly_breach_report_v3.py cost_overnight_gap.py step_c_sensitivity_v2.py
 ```
 
 This runs, in order: data cleaning, breach calculation, the weekly reports, and the overnight coverage sizing. Everything is written to `output/`. If a data file is missing, the script says which one and stops.
