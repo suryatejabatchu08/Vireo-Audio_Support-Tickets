@@ -1262,3 +1262,88 @@ Hourly share of overnight tickets (night hours only):
 ### Headline Goal
 Cut the overall breach rate from about 25% to about 11%, worth roughly Rs 101,722 a quarter.
 
+
+## 2026-10-02
+
+### PII Masking and Model Categorization Experiment
+
+#### Step A-C: PII Masking Completed
+- Applied PII masking to  creating 
+- Masked: Order IDs (VRxxxxxx) → [ORDER], Email → [EMAIL], Phone → [PHONE], Names after salutations → [NAME]
+- Processed all 60 rows
+- Verified 0 rows contain remaining order IDs, emails, or phone numbers
+
+#### Step D: Model Classification Attempt
+- Used Groq API with model  (due to rate limits on other models)
+- Processed all 60 masked customer messages
+- Results:
+  - Total time: 193.32 seconds (~3.2 minutes)
+  - API failures: 0
+  - Invalid label format: 39/60 tickets (65%) - model returned empty  field with reasoning in  field
+  - Valid label format: 21/60 tickets (35%) - model returned label in  field
+
+#### Reasoning Model Behavior Observed
+The  model is a reasoning model that:
+- Places its final answer in the  field rather than  field
+- Uses chain-of-thought analysis before stating conclusions
+- For valid cases: Output format was  in 
+- For invalid cases:  field was empty, with full analysis in  field
+
+#### Next Steps for Improved Extraction
+To handle reasoning models, extraction logic should:
+1. First check  field for label (current approach)
+2. If  is empty/invalid, parse  field for conclusions
+3. Look for patterns like:
+   - "falls under [CATEGORY] category"
+   - "[CATEGORY] and a brief reason"
+   - Take the last mentioned category in reasoning (often the conclusion)
+
+#### Limitations Noted
+- Only 60 tickets available for testing (small sample)
+- Labels created by single human annotator (no inter-annotator agreement measured)
+- Model only sees masked customer message (no agent notes, bot category, or other metadata)
+- Rate limits constrained experimentation with different models
+
+
+
+## 2026-10-02
+
+### PII Masking and Model Categorization Experiment
+
+#### Step A-C: PII Masking Completed
+- Applied PII masking to `sample_for_labelling.csv` creating `sample_for_labelling_masked.csv`
+- Masked: Order IDs (VRxxxxxx) → [ORDER], Email → [EMAIL], Phone → [PHONE], Names after salutations → [NAME]
+- Processed all 60 rows
+- Verified 0 rows contain remaining order IDs, emails, or phone numbers
+
+#### Step D: Model Classification Attempt
+- Used Groq API with model `openai/gpt-oss-20b` (due to rate limits on other models)
+- Processed all 60 masked customer messages
+- Results:
+  - Total time: 193.32 seconds (~3.2 minutes)
+  - API failures: 0
+  - Invalid label format: 39/60 tickets (65%) - model returned empty `content` field with reasoning in `reasoning` field
+  - Valid label format: 21/60 tickets (35%) - model returned label in `content` field
+
+#### Reasoning Model Behavior Observed
+The `openai/gpt-oss-20b` model is a reasoning model that:
+- Places its final answer in the `reasoning` field rather than `content` field
+- Uses chain-of-thought analysis before stating conclusions
+- For valid cases: Output format was `"Label\nBrief reason (≤15 words)"` in `content`
+- For invalid cases: `content` field was empty, with full analysis in `reasoning` field
+
+#### Next Steps for Improved Extraction
+To handle reasoning models, extraction logic should:
+1. First check `content` field for label (current approach)
+2. If `content` is empty/invalid, parse `reasoning` field for conclusions
+3. Look for patterns like:
+   - "falls under [CATEGORY] category"
+   - "[CATEGORY] and a brief reason"
+   - Take the last mentioned category in reasoning (often the conclusion)
+
+#### Limitations Noted
+- Only 60 tickets available for testing (small sample)
+- Labels created by single human annotator (no inter-annotator agreement measured)
+- Model only sees masked customer message (no agent notes, bot category, or other metadata)
+- Rate limits constrained experimentation with different models
+

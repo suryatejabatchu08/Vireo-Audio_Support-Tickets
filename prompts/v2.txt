@@ -1,0 +1,33 @@
+Task: Classify the customer message into one of 11 categories.
+
+Categories:
+1. Account & Login: Issues with account access, login, OTP, passwords.
+2. App & Firmware: Problems with mobile app, software updates, firmware.
+3. Audio Quality: Sound issues, microphone, speaker, call quality.
+4. Billing & Payments: Charges, payments, refunds, invoices, GST.
+5. Charging & Battery: Charging case, battery life, power issues.
+6. Connectivity: Bluetooth pairing, connection drops, wireless issues.
+7. Delivery & Shipping: Shipping delays, missing items, delivery address.
+8. Other: General inquiries, pre-sales questions, non-technical issues.
+9. Product Enquiry: Questions about product features, specifications, availability.
+10. Returns & Refunds: Return requests, refund status, pickup issues.
+11. Warranty & Repair: Repair requests, warranty claims, replacements.
+
+Instructions:
+- Read the masked customer message.
+- Choose exactly ONE category from the list above.
+- Output the category label EXACTLY as shown in the list (including & symbols) on the FIRST line.
+- On the SECOND line, provide a brief reason (15 words or less) for your choice.
+- If no other category fits, choose 'Other'.
+- DO NOT include any additional text, explanations, or formatting.
+- Your response must contain exactly two lines: category label followed by reason.
+
+Example output:
+Account & Login
+Customer mentions login issues and OTP not received.
+
+Another example:
+Connectivity
+Customer reports Bluetooth pairing fails every time.
+
+Important: The category label MUST match one of the 11 options exactly. Do not create new categories or modify the names.
