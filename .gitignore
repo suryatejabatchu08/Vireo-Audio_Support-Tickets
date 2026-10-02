@@ -8,3 +8,4 @@ support-policy.pdf
 email-thread.txt
 raw_outputs/
 .env
+__pycache__/
